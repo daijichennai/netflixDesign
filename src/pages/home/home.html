@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle *ngIf="!isSearchbarOpened">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title *ngIf="!isSearchbarOpened">
+      Netflix
+    </ion-title>
+    <ion-searchbar *ngIf="isSearchbarOpened" showCancelButton="true" (search)="onSearch($event)" (ionCancel)="isSearchbarOpened=false"></ion-searchbar>
+    <ion-buttons end>
+      <button ion-button icon-only *ngIf="!isSearchbarOpened" (click)="isSearchbarOpened=true">
+        <ion-icon name="search"></ion-icon>
+      </button> 
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+  <h3 style="padding-left:10px;" >Marvel Movies</h3>
+<ion-scroll scrollX="true" direction="x">
+  
+  <div id="carousel">
+    <div class="slide">
+      <img src="../../assets/imgs/marvel1.jpg" (click)="goToMovieDetails()" />
+    </div>
+    <div class="slide">
+      <img src="../../assets/imgs/marvel2.jpg" (click)="goToMovieDetails()" />
+    </div>
+    <div class="slide">
+      <img src="../../assets/imgs/marvel3.jpg" (click)="goToMovieDetails()" />
+    </div>
+    <div class="slide">
+      <img src="../../assets/imgs/marvel4.jpg" (click)="goToMovieDetails()" />
+    </div>
+    <div class="slide">
+      <img src="../../assets/imgs/marvel1.jpg" (click)="goToMovieDetails()" />
+    </div>
+    <div class="slide">
+      <img src="../../assets/imgs/marvel2.jpg" (click)="goToMovieDetails()" />
+    </div>
+  </div>
+</ion-scroll>
+  
+
+</ion-content>

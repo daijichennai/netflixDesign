@@ -1,0 +1,22 @@
+<!--Side Menu with avatar-->
+<ion-menu [content]="content" id="menu-avatar">
+  <ion-content>
+    <div #header>
+      <ion-row style="justify-content: center;">
+        <h3>NetFlix</h3>
+      </ion-row>
+      <div style="height: 3vw"></div>
+      <div class="menu-user-image" style="background-image: url('https://assets.pcmag.com/media/images/434952-netflix-logo.png?width=810&height=456');"></div>
+      <div style="height: 3vw"></div>
+      <div class="font18" text-center>User Name</div>
+    </div>
+    <ion-list no-lines>
+      <button menuClose ion-item detail-none *ngFor="let p of pages" (click)="openPage(p)">
+        <ion-icon [name]="p.icon" item-left></ion-icon>
+        {{p.title}}
+      </button>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
